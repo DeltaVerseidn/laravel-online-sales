@@ -4,10 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\DashboardController;     // 1. Import DashboardController
+use App\Http\Controllers\Admin\AdminOrderController;     // 1. Import AdminOrderController
 use App\Http\Controllers\ProductCatalogController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\CheckoutController;         // 1. Import CheckoutController
-use App\Http\Controllers\CustomerOrderController;    // 1. Import CustomerOrderController
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CustomerOrderController;
 
 // ==========================================
 // M4.2: ROUTE PUBLIK (Bisa diakses umum)
@@ -48,12 +50,23 @@ Route::middleware(['auth', 'role:customer'])->group(function () {
 
 
 // ==========================================
-// ROUTE ADMIN (Khusus Admin)
+// M7.4 & ADMIN ROUTES (Khusus Admin)
 // ==========================================
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
+    // Dashboard Admin (M7.4)
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Master Kategori & Produk (Milestone 2)
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
     Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
     Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
     Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
     Route::resource('products', ProductController::class)->except('show');
+
+    // Manajemen Transaksi / Pesanan Admin (M7.4)
+    Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders/{order}', [AdminOrderController::class, 'show'])->name('orders.show');
+    Route::patch('/orders/{order}/confirm', [AdminOrderController::class, 'confirm'])->name('orders.confirm');
+    Route::patch('/orders/{order}/status', [AdminOrderController::class, 'updateStatus'])->name('orders.status');
+    Route::patch('/orders/{order}/cancel', [AdminOrderController::class, 'cancel'])->name('orders.cancel');
 });
