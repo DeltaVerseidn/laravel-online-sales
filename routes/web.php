@@ -5,7 +5,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProductCatalogController;
-use App\Http\Controllers\CartController; // 1. Import CartController di sini
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;         // 1. Import CheckoutController
+use App\Http\Controllers\CustomerOrderController;    // 1. Import CustomerOrderController
 
 // ==========================================
 // M4.2: ROUTE PUBLIK (Bisa diakses umum)
@@ -28,13 +30,20 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->n
 
 
 // ==========================================
-// M5.3: ROUTE CART (Khusus Customer)
+// M5.3 & M6.7: ROUTE CUSTOMER (Cart & Checkout)
 // ==========================================
 Route::middleware(['auth', 'role:customer'])->group(function () {
+    // Cart Routes (M5.3)
     Route::get('/keranjang', [CartController::class, 'index'])->name('cart.index');
     Route::post('/keranjang/{product}', [CartController::class, 'store'])->name('cart.store');
     Route::patch('/keranjang/{product}', [CartController::class, 'update'])->name('cart.update');
     Route::delete('/keranjang/{product}', [CartController::class, 'destroy'])->name('cart.destroy');
+
+    // Checkout & Order Routes (M6.7)
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+    Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+    Route::get('/pesanan', [CustomerOrderController::class, 'index'])->name('orders.index');
+    Route::get('/pesanan/{order}', [CustomerOrderController::class, 'show'])->name('orders.show');
 });
 
 
