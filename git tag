@@ -1,0 +1,59 @@
+*   [33m11c7dac[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;33mtag: [m[1;33mm7-order-admin[m[33m)[m Merge branch 'milestone/07-order-admin'
+[31m|[m[32m\[m  
+[31m|[m * [33mad09fcd[m[33m ([m[1;32mmilestone/07-order-admin[m[33m)[m feat(order): add order status workflow and stock rollback on cancel
+[31m|[m * [33m25db716[m feat(admin): add transaction dashboard and order validation
+[31m|[m[31m/[m  
+*   [33md8823e2[m[33m ([m[1;33mtag: [m[1;33mm6-checkout[m[33m)[m Merge branch 'milestone/06-checkout'
+[33m|[m[34m\[m  
+[33m|[m * [33m12b941f[m[33m ([m[1;32mmilestone/06-checkout[m[33m)[m feat(checkout): add transactional checkout and customer order history
+[33m|[m * [33md5bfa41[m feat(order): add order schema and relationships
+[33m|[m[33m/[m  
+*   [33m5b1b1da[m[33m ([m[1;33mtag: [m[1;33mm5-cart[m[33m)[m Merge branch 'milestone/05-cart'
+[35m|[m[36m\[m  
+[35m|[m * [33m390d2af[m[33m ([m[1;32mmilestone/05-cart[m[33m)[m feat(cart): add session based shopping cart
+[35m|[m[35m/[m  
+*   [33m037ae49[m[33m ([m[1;33mtag: [m[1;33mm4-storefront[m[33m)[m Merge branch 'milestone/04-storefront'
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33m5f0c445[m[33m ([m[1;32mmilestone/04-storefront[m[33m)[m feat(storefront): add product detail by slug
+[1;31m|[m * [33mdb1fec4[m feat(storefront): add product catalog filters and pagination
+[1;31m|[m[1;31m/[m  
+*   [33m37b3c27[m[33m ([m[1;33mtag: [m[1;33mm3-inventory-shipping[m[33m)[m Merge branch 'milestone/03-inventory-shipping'
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33m257c772[m[33m ([m[1;32mmilestone/03-inventory-shipping[m[33m)[m feat(shipping): add shipping service management
+[1;33m|[m * [33m7982450[m feat(inventory): add stock movement and stock-in transaction
+[1;33m|[m[1;33m/[m  
+*   [33m9812ff8[m[33m ([m[1;33mtag: [m[1;33mm2-master-product[m[33m)[m Merge branch 'milestone/02-master-product'
+[1;35m|[m[1;36m\[m  
+[1;35m|[m * [33mb31495b[m[33m ([m[1;32mmilestone/02-master-product[m[33m)[m lupa
+[1;35m|[m * [33mc0b6992[m semua
+[1;35m|[m * [33m1204f30[m edit blade
+[1;35m|[m * [33md082507[m create blade
+[1;35m|[m * [33md8eae9d[m form blade
+[1;35m|[m * [33m11ae9eb[m index blade
+[1;35m|[m * [33m247d063[m index blade
+[1;35m|[m * [33m3768abd[m admin blade
+[1;35m|[m * [33m534d8af[m produk controler
+[1;35m|[m * [33mbb82066[m category controller
+[1;35m|[m * [33mbe73cb5[m update produk request
+[1;35m|[m * [33m81e592b[m strore produk
+[1;35m|[m * [33m6f9fbc8[m produk php
+[1;35m|[m * [33m6993a3d[m category php
+[1;35m|[m * [33m5516e60[m create produk
+[1;35m|[m * [33meb540e2[m categories table
+[1;35m|[m[1;35m/[m  
+*   [33m538df70[m[33m ([m[1;33mtag: [m[1;33mm1-auth-role[m[33m)[m Merge branch 'milestone/01-auth-role'
+[31m|[m[32m\[m  
+[31m|[m * [33m5eebba5[m[33m ([m[1;32mmilestone/01-auth-role[m[33m)[m feat(auth): add role middleware and admin seeder
+[31m|[m * [33m2fbb511[m register blade
+[31m|[m * [33m586c935[m login blade
+[31m|[m * [33me5c00cd[m app blade
+[31m|[m * [33m54cd148[m web php
+[31m|[m * [33m7ef463c[m update seeder
+[31m|[m * [33m27dac57[m buat seeder
+[31m|[m * [33mcccf1bf[m membuat autcooler
+[31m|[m * [33ma4685d9[m mendaftarkan alias midelware
+[31m|[m * [33m520b764[m membuat middleware
+[31m|[m * [33me3bbe22[m mengubah user.php
+[31m|[m * [33m43e87d1[m nambah file
+[31m|[m[31m/[m  
+* [33mfe9d00e[m[33m ([m[1;33mtag: [m[1;33mm0-setup[m[33m)[m chore: initialize Laravel online sales project
